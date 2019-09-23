@@ -62,6 +62,10 @@
   <ItemGroup>
     <Compile Include="Assets\Camera_Control.cs" />
     <Compile Include="Assets\Player_Movement.cs" />
+    <Compile Include="Assets\Scripts\CameraFollowController.cs" />
+    <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
+    <Compile Include="Assets\Scripts\SimpleCarController.cs" />
+    <Compile Include="Assets\Tutorial_Info\Scripts\Readme.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/Kuliah/smt 7/RVA bangsat/Tugas 1/tugas-1-driving-simulation-stradzzz/VR pertama/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
