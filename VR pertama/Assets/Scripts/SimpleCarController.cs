@@ -42,15 +42,22 @@ public class SimpleCarController : MonoBehaviour {
 		_transform.rotation = _quat;
 	}
 
-	private void FixedUpdate()
+    private void FixedUpdate()
 	{
 		GetInput();
 		Steer();
 		Accelerate();
 		UpdateWheelPoses();
+        UpdateSteerAngle();
 	}
 
-	private float m_horizontalInput;
+    void UpdateSteerAngle()
+    {
+        steeringWheelTransform.localEulerAngles = Vector3.back * Mathf.Clamp((Input.GetAxis("Horizontal") * 100), -maxSteerAngle, maxSteerAngle);
+
+    }
+
+    private float m_horizontalInput;
 	private float m_verticalInput;
 	private float m_steeringAngle;
 
@@ -58,6 +65,7 @@ public class SimpleCarController : MonoBehaviour {
 	public WheelCollider rearDriverW, rearPassengerW;
 	public Transform frontDriverT, frontPassengerT;
 	public Transform rearDriverT, rearPassengerT;
-	public float maxSteerAngle = 30;
+    public Transform steeringWheelTransform;
+    public float maxSteerAngle = 30;
 	public float motorForce = 50;
 }
